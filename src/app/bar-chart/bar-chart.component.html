@@ -1,0 +1,29 @@
+<mat-card title class="title">
+    <mat-card-title class="title">Price vs Category</mat-card-title>
+</mat-card>
+
+
+
+<div  class="chart">
+    <ngx-charts-bar-vertical
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="multi"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="showLegend"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+      [barPadding]="barPadding">
+    </ngx-charts-bar-vertical>
+  </div>
+  
+
+  <mat-card-content>
+    <div>
+      <button class="action" mat-raised-button color="primary" routerLink='/'>Back</button>
+     
+    </div>
+  </mat-card-content> 
+

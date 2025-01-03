@@ -1,0 +1,33 @@
+<mat-card class="card">
+<div  >
+  <h2 class="title">Update Product</h2>
+
+
+  <form>
+    <!-- Product Name -->
+    <mat-form-field class="full-width">
+      <mat-label>Product Name</mat-label>
+      <input matInput [(ngModel)]="product.name" name="name" required>
+    </mat-form-field>
+
+    <!-- Product Price -->
+    <mat-form-field class="full-width">
+      <mat-label>Price</mat-label>
+      <input matInput [(ngModel)]="product.price" name="price" type="number" required>
+    </mat-form-field>
+
+    <!-- Product Category -->
+    <mat-form-field class="full-width">
+      <mat-label>Category</mat-label>
+      <input matInput [(ngModel)]="product.category" name="category" required>
+    </mat-form-field>
+
+    <!-- Buttons -->
+    <div class="actions">
+      <button class="button" mat-raised-button color="primary" type="button" (click)="updateProduct()">Update</button>
+      <button  class="button" mat-raised-button color="warn" type="button" (click)="deleteProduct()">Delete</button>
+
+    </div>
+  </form>
+</div>
+</mat-card>

@@ -1,0 +1,41 @@
+<mat-card class="card1">
+  <mat-card-title>Product Management</mat-card-title>
+</mat-card>
+<mat-card-content>
+  <div>
+    <button class="action" mat-raised-button color="primary" routerLink="/addpro">Add Product</button>
+    <button class="action" mat-raised-button color="warn" (click)="deleteAllProducts()">Delete All Products</button>
+    <button mat-raised-button  routerLink='/viewbar'>View-Bar-Chart</button>
+  </div>
+</mat-card-content>     
+
+<mat-card class="card">
+  <!-- Product Table -->
+  <table mat-table [dataSource]="products" class="mat-elevation-z8 full-width-table">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let product"> {{product.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef> Price </th>
+      <td mat-cell *matCellDef="let product"> {{product.price}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="category">
+      <th mat-header-cell *matHeaderCellDef> Category </th>
+      <td mat-cell *matCellDef="let product"> {{product.category}} </td>
+    </ng-container>
+
+    <!-- Action Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let product">
+        <button mat-button color="primary"  [routerLink]="['/updatepro', product.name]">Update</button>
+        <button mat-button  color="accent" (click)="deleteProduct(product)">Delete</button>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</mat-card>
